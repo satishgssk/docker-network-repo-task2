@@ -9,7 +9,7 @@ pipeline {
                sh '''
                 docker build -t satishgssk/task2-db db
                 docker build -t satishgssk/task2-nginx nginx
-                docker build -t satishgssk/task2-app .
+                docker build -t satishgssk/task2-app flask-app
                 '''
             }
         }
