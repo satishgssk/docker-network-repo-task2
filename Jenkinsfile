@@ -25,7 +25,12 @@ pipeline {
         stage('Deploy') {
             steps { 
                 sh '''
-                kubectl apply -f .
+                sed -e 's,{{password}}','${MYSQL_ROOT_PASSWORD}','g;' db-secret.yaml | kubectl apply -f -
+                kubectl apply -f task2-db-manifest.yaml
+                kubectl apply -f task2-app-manifest.yaml
+                kubectl apply -f task2-nginx-manifest.yaml
+                sleep 60
+                kubectl get services
                 '''
             }
         }
