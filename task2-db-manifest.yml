@@ -21,7 +21,7 @@ metadata:
 spec:
   containers:
   - name: task2-db
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
     image: satishgssk/task2-db
     ports: 
      - containerPort: 3306

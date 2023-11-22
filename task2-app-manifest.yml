@@ -21,7 +21,7 @@ metadata:
 spec:
   containers:
   - name: task2-app
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
     image: satishgssk/task2-app
     ports: 
      - containerPort: 5000
